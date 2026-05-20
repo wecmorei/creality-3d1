@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pedido registrado na MiniForge 3D — código e próximos passos." />
+    <meta name="theme-color" content="#e85d04" />
+    <title>Pedido registrado | MiniForge 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260521c" />
+  </head>
+  <body class="order-success-page" data-page="order-success">
+    <div id="site-chrome-header"></div>
+
+    <main class="order-success-main">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Navegação">
+          <a href="index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <span>Pedido registrado</span>
+        </nav>
+
+        <article class="panel-card order-success-card" id="order-success-card" aria-live="polite">
+          <p class="eyebrow order-success-eyebrow">Pedido registrado</p>
+          <h1 id="order-success-title">Obrigado!</h1>
+          <p class="order-success-code" id="order-success-code"></p>
+          <p class="section-subtitle" id="order-success-subtitle"></p>
+          <p class="order-success-photos" id="order-success-photos" hidden></p>
+
+          <div class="order-success-actions">
+            <a class="btn btn-buy" id="order-success-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            <a class="btn btn-outline" id="order-success-track" href="acompanhar.html">Acompanhar pedido</a>
+            <a class="btn btn-outline" href="minha-conta.html">Minha conta</a>
+          </div>
+
+          <ul class="order-success-tips">
+            <li>Guarde o código <strong>MF3D-…</strong> — ele aparece no WhatsApp e em Minha conta.</li>
+            <li>Resposta média em até 2 horas úteis (segunda a sexta, 9h–18h).</li>
+            <li>Pix com 10% de desconto após confirmação do valor final.</li>
+          </ul>
+        </article>
+      </div>
+    </main>
+
+    <div id="site-chrome-footer"></div>
+
+    <script src="./site-config.js?v=20260521c"></script>
+    <script src="./cart.js?v=20260521c"></script>
+    <script src="./customer-orders.js?v=20260521c"></script>
+    <script src="./store-common.js?v=20260521c"></script>
+    <script src="./customer-auth.js?v=20260521c"></script>
+    <script src="./site-layout.js?v=20260521c"></script>
+    <script src="./pedido-registrado.js?v=20260521c"></script>
+  </body>
+</html>

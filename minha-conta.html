@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Minha conta MiniForge 3D — pedidos salvos, carrinho e acompanhamento." />
+    <meta name="theme-color" content="#e85d04" />
+    <title>Minha conta | MiniForge 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260521c" />
+  </head>
+  <body class="account-page" data-page="account">
+    <div id="site-chrome-header"></div>
+
+    <main class="account-main">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Navegação">
+          <a href="index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <span>Minha conta</span>
+        </nav>
+
+        <header class="account-header">
+          <h1>Minha conta</h1>
+          <p class="section-subtitle account-intro">
+            <strong>Neste aparelho</strong> guarda pedidos automaticamente neste navegador.
+            <strong>Minha conta (e-mail)</strong> sincroniza pedidos em qualquer dispositivo após o login.
+          </p>
+        </header>
+
+        <div class="account-quick-links panel-card">
+          <a class="btn btn-outline" href="carrinho.html">Carrinho <span data-cart-count hidden>0</span></a>
+          <a class="btn btn-outline" href="catalogo.html">Catálogo</a>
+          <a class="btn btn-buy" href="acompanhar.html">Consultar por código</a>
+        </div>
+
+        <div class="account-tabs" role="tablist" aria-label="Áreas da conta">
+          <button class="account-tab is-active" type="button" role="tab" id="tab-local-btn" aria-selected="true" aria-controls="account-panel-local" data-account-tab="local">
+            Neste aparelho
+          </button>
+          <button class="account-tab" type="button" role="tab" id="tab-cloud-btn" aria-selected="false" aria-controls="account-panel-cloud" data-account-tab="cloud">
+            Minha conta (e-mail)
+          </button>
+        </div>
+
+        <div class="account-tab-panel is-active" id="account-panel-local" role="tabpanel" aria-labelledby="tab-local-btn">
+          <section class="account-section panel-card" aria-labelledby="orders-heading">
+            <div class="account-section-head">
+              <h2 id="orders-heading">Pedidos neste navegador</h2>
+              <button class="btn-text" type="button" id="clear-orders-btn" hidden>Limpar histórico</button>
+            </div>
+            <div id="my-orders-list" class="my-orders-list" aria-live="polite"></div>
+          </section>
+
+          <section class="account-section panel-card" aria-labelledby="add-code-heading">
+            <h2 id="add-code-heading">Adicionar pedido</h2>
+            <p class="section-subtitle">Cole o código recebido no WhatsApp (formato MF3D-...).</p>
+            <form id="add-order-form" class="account-inline-form">
+              <label>
+                Código do pedido
+                <input type="text" name="code" placeholder="MF3D-20260518-XXXXXXXX" required />
+              </label>
+              <button class="btn btn-buy" type="submit">Salvar e consultar</button>
+            </form>
+            <div class="tracking-result" id="add-order-result" role="status"></div>
+          </section>
+        </div>
+
+        <div class="account-tab-panel" id="account-panel-cloud" role="tabpanel" aria-labelledby="tab-cloud-btn" hidden>
+          <section class="account-section panel-card" id="account-login-section" aria-labelledby="login-heading">
+            <h2 id="login-heading">Entrar com e-mail</h2>
+            <p class="section-subtitle">Link seguro sem senha. Use o mesmo e-mail do pedido quando possível.</p>
+
+            <div class="oauth-buttons" id="oauth-buttons" hidden>
+              <button class="btn btn-oauth btn-oauth-google" type="button" data-oauth="google">
+                <svg class="oauth-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.94 5.94 0 0 1-2.58 3.91v3.22h4.18c3.91-3.6 6.16-8.9 6.16-15.14z"/>
+                  <path fill="#34A853" d="M12 23c3.24 0 5.95-1.08 7.93-2.91l-4.18-3.22a5.78 5.78 0 0 1-8.59-3.05H2.18v3.33A12 12 0 0 0 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09a7.2 7.2 0 0 1 0-4.18V6.58H2.18A12 12 0 0 0 0 12c0 1.94.46 3.76 1.28 5.42l3.56-2.33z"/>
+                  <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0 7.31 0 3.28 2.69 1.28 6.58l3.66 2.84c.87-2.6 3.3-4.67 6.06-4.67z"/>
+                </svg>
+                <span>Continuar com Google</span>
+              </button>
+              <button class="btn btn-oauth btn-oauth-facebook" type="button" data-oauth="facebook">
+                <svg class="oauth-icon oauth-icon--mono" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path fill="currentColor" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.02 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                <span>Continuar com Facebook</span>
+              </button>
+              <button class="btn btn-oauth btn-oauth-apple" type="button" data-oauth="apple">
+                <svg class="oauth-icon oauth-icon--mono" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path fill="currentColor" d="M17.05 20.28c-.98.95-2.05.88-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35-2.79-2.51-3.23-10.05-2.8-14.07 2.2-2.03 5.45-2.73 8.28-2.63 1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                </svg>
+                <span>Continuar com Apple</span>
+              </button>
+            </div>
+            <p class="oauth-unavailable" id="oauth-unavailable" hidden>Login com Google, Facebook e Apple em breve. Use o e-mail abaixo.</p>
+            <p class="oauth-status" id="oauth-status" role="status" aria-live="polite"></p>
+            <p class="oauth-divider" id="oauth-divider" hidden><span>ou use seu e-mail</span></p>
+
+            <form id="customer-login-form" class="account-inline-form">
+              <label>
+                E-mail
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <button class="btn btn-buy" type="submit">Receber link de acesso</button>
+              <p class="form-status" id="customer-login-status" role="status"></p>
+            </form>
+            <div id="customer-logged-in" hidden>
+              <p>Conectado como <strong id="customer-email-label"></strong></p>
+              <button class="btn-text" type="button" id="customer-logout-btn">Sair</button>
+            </div>
+          </section>
+
+          <section class="account-section panel-card" id="cloud-orders-section" hidden aria-labelledby="cloud-orders-heading">
+            <div class="account-section-head">
+              <h2 id="cloud-orders-heading">Pedidos na sua conta</h2>
+              <button class="btn-text" type="button" id="refresh-cloud-orders">Atualizar</button>
+            </div>
+            <div id="cloud-orders-list" class="my-orders-list" aria-live="polite"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-chrome-footer"></div>
+
+    <script src="./site-config.js?v=20260521c"></script>
+    <script src="./cart.js?v=20260521c"></script>
+    <script src="./customer-orders.js?v=20260521c"></script>
+    <script src="./store-common.js?v=20260521c"></script>
+    <script src="./customer-auth.js?v=20260521c"></script>
+    <script src="./site-layout.js?v=20260521c"></script>
+    <script src="./minha-conta.js?v=20260521c"></script>
+  </body>
+</html>

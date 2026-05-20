@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "miniatura-dragao-de-mesa",
+    "id": "1e83bb65-e72b-45fa-8d8d-01528d0ce7f5",
+    "featured": true
+  },
+  {
+    "slug": "miniatura-de-mesa",
+    "id": "dd1a20fe-903a-4396-a449-66d349957f63",
+    "featured": true
+  },
+  {
+    "slug": "action-figure-heroi-custom",
+    "id": "441772a7-cbed-48b6-8c5f-a5ec7c2ea901",
+    "featured": true
+  },
+  {
+    "slug": "action-figure-personalizada",
+    "id": "f8590535-d21a-4531-99e4-70f8ea85f674",
+    "featured": true
+  },
+  {
+    "slug": "suporte-headset-gamer",
+    "id": "2ce54d54-315c-454b-9a32-445235ff8e34",
+    "featured": true
+  },
+  {
+    "slug": "decoracao-geek",
+    "id": "632caf44-bee6-4e0d-8c45-6d9648ace7c6",
+    "featured": true
+  },
+  {
+    "slug": "chaveiro-nome-3d",
+    "id": "bdb3c082-198f-4a39-8f92-f857f18eb691",
+    "featured": false
+  },
+  {
+    "slug": "chaveiros-e-lembrancas",
+    "id": "edb91a85-50c7-4053-8fc4-75aad3a37ce6",
+    "featured": false
+  },
+  {
+    "slug": "pecas-tecnicas",
+    "id": "8497340b-5157-4485-ace4-d740afcef010",
+    "featured": false
+  },
+  {
+    "slug": "kit-pintura",
+    "id": "bd7c31a2-a593-4533-a8b9-0b753dff9069",
+    "featured": false
+  }
+]

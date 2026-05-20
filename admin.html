@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Admin | MiniForge 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260521c" />
+  </head>
+  <body>
+    <main class="section container admin-page">
+      <div class="section-heading">
+        <p class="eyebrow">Admin MiniForge 3D</p>
+        <h1>Painel de pedidos</h1>
+        <p>Área protegida para acompanhar pedidos e atualizar status de produção.</p>
+      </div>
+
+      <section class="quote-card admin-login" id="admin-login">
+        <h2>Entrar</h2>
+        <form id="admin-login-form">
+          <label>
+            E-mail
+            <input type="email" name="email" autocomplete="email" required />
+          </label>
+          <label>
+            Senha
+            <input type="password" name="password" autocomplete="current-password" required />
+          </label>
+          <button class="button button-primary" type="submit">Entrar no painel</button>
+          <p class="form-status" id="admin-login-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="admin-panel" id="admin-panel" hidden>
+        <div class="admin-toolbar">
+          <div>
+            <p class="eyebrow">Gestão operacional</p>
+            <h2>Gestão operacional</h2>
+          </div>
+          <div class="admin-actions">
+            <button class="button button-secondary" id="refresh-orders" type="button">Atualizar</button>
+            <button class="button button-secondary" id="logout-admin" type="button">Sair</button>
+          </div>
+        </div>
+
+        <div class="admin-tabs" aria-label="Seções do painel">
+          <button class="admin-tab is-active" type="button" data-admin-tab="dashboard">Resumo</button>
+          <button class="admin-tab" type="button" data-admin-tab="orders">Pedidos</button>
+          <button class="admin-tab" type="button" data-admin-tab="customers">Clientes</button>
+          <button class="admin-tab" type="button" data-admin-tab="products">Produtos</button>
+        </div>
+
+        <section class="admin-tab-panel is-active" id="admin-tab-dashboard">
+          <div class="admin-dashboard" id="admin-dashboard" aria-live="polite"></div>
+        </section>
+
+        <section class="admin-tab-panel" id="admin-tab-orders">
+          <form class="admin-filters panel-card" id="admin-order-filters">
+            <label>
+              Status
+              <select name="status">
+                <option value="">Todos</option>
+              </select>
+            </label>
+            <label>
+              Código MF3D
+              <input type="search" name="q" placeholder="MF3D-..." autocomplete="off" />
+            </label>
+            <label class="admin-filter-checkbox">
+              <input type="checkbox" name="com_fotos" value="1" />
+              Orçamentos com foto
+            </label>
+            <button class="button button-primary" type="submit">Filtrar</button>
+            <button class="button button-secondary" type="button" id="clear-order-filters">Limpar</button>
+            <button class="button button-secondary" type="button" id="export-orders-csv">Exportar CSV</button>
+          </form>
+          <div class="admin-pagination" id="admin-pagination" hidden>
+            <p id="admin-pagination-meta"></p>
+            <div class="admin-pagination-actions">
+              <button class="button button-secondary" type="button" id="admin-prev-page" disabled>Anterior</button>
+              <button class="button button-secondary" type="button" id="admin-next-page" disabled>Próxima</button>
+            </div>
+          </div>
+          <div class="admin-orders" id="admin-orders" aria-live="polite"></div>
+        </section>
+
+        <section class="admin-tab-panel" id="admin-tab-customers">
+          <p class="admin-hint">Clientes agrupados pelos pedidos carregados (últimos 100).</p>
+          <div class="admin-customers" id="admin-customers" aria-live="polite"></div>
+        </section>
+
+        <section class="admin-tab-panel" id="admin-tab-products">
+          <div class="admin-products-layout">
+            <form class="quote-card admin-product-form" id="admin-product-form">
+              <h3>Novo produto</h3>
+              <input type="hidden" name="id" />
+              <label>
+                Categoria
+                <select name="category_id" required></select>
+              </label>
+              <label>
+                Nome
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                Slug
+                <input type="text" name="slug" placeholder="action-figure-personalizada" required />
+              </label>
+              <label>
+                Descrição curta
+                <textarea name="short_description" rows="3" required></textarea>
+              </label>
+              <label>
+                Descrição completa
+                <textarea name="description" rows="4" placeholder="Detalhes para a página do produto"></textarea>
+              </label>
+              <label>
+                Foto do produto <span class="optional">(obrigatória para publicar ativo)</span>
+                <input type="file" name="image_file" accept="image/jpeg,image/png,image/webp" />
+              </label>
+              <p class="form-hint">Imagens grandes são redimensionadas automaticamente antes do envio.</p>
+              <div class="admin-form-grid">
+                <label>
+                  Preço exibido
+                  <input type="text" name="price_label" placeholder="A partir de R$ 59" required />
+                </label>
+                <label>
+                  Preço base em centavos
+                  <input type="number" name="starting_price_cents" min="0" step="1" placeholder="5900" />
+                </label>
+              </div>
+              <div class="admin-form-grid">
+                <label>
+                  Prazo
+                  <input type="text" name="lead_time_label" placeholder="5 a 10 dias" required />
+                </label>
+                <label>
+                  Escala
+                  <input type="text" name="scale_label" placeholder="12 a 25 cm" required />
+                </label>
+              </div>
+              <label>
+                Acabamento
+                <input type="text" name="finish_label" placeholder="Primer ou pintura" required />
+              </label>
+              <div class="admin-checks">
+                <label>
+                  <input type="checkbox" name="is_featured" />
+                  Destaque
+                </label>
+                <label>
+                  <input type="checkbox" name="is_active" checked />
+                  Ativo
+                </label>
+              </div>
+              <button class="button button-primary" type="submit">Salvar produto</button>
+              <button class="button button-secondary" id="reset-product-form" type="button">Limpar</button>
+              <p class="form-status" id="admin-product-status" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="admin-products" id="admin-products" aria-live="polite"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>

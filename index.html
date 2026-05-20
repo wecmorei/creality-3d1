@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MiniForge 3D — action figures, miniaturas e peças personalizadas impressas em 3D sob encomenda."
+    />
+    <meta name="theme-color" content="#e85d04" />
+    <title>MiniForge 3D | Loja de impressão 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260521c" />
+  </head>
+  <body data-page="home">
+    <div id="site-chrome-header"></div>
+
+    <main id="inicio">
+      <section class="hero-banner" aria-label="Destaque">
+        <div class="container hero-banner-inner">
+          <div class="hero-banner-copy">
+            <span class="hero-tag">Impressão 3D sob demanda</span>
+            <h1>Action figures, miniaturas e peças exclusivas</h1>
+            <p>Catálogo pronto para pedir, encomendas personalizadas e acompanhamento do pedido online.</p>
+            <div class="hero-banner-actions">
+              <a class="btn btn-buy" href="catalogo.html">Ver catálogo</a>
+              <a class="btn btn-outline" href="personalizado.html">Orçamento personalizado</a>
+            </div>
+          </div>
+          <div class="hero-banner-card" aria-hidden="true">
+            <span>3D</span>
+            <p>Produção com curadoria, Pix com 10% de desconto e envio combinado.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="category-strip" id="categorias" aria-label="Categorias">
+        <div class="container">
+          <h2 class="section-title">Compre por categoria</h2>
+          <div class="category-row" id="home-category-row" aria-live="polite">
+            <span class="loading-message">Carregando categorias...</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="store-section" id="mais-vendidos">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Mais vendidos</h2>
+            <a class="section-link" href="catalogo.html">Ver catálogo completo</a>
+          </header>
+          <div class="product-grid" id="bestseller-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="store-section store-section-alt" id="portfolio" aria-label="Trabalhos entregues">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Trabalhos entregues</h2>
+            <p class="section-subtitle">Exemplos do tipo de peça que produzimos — substitua pelas fotos reais dos seus projetos no painel admin.</p>
+          </header>
+          <div class="portfolio-grid">
+            <article class="portfolio-card portfolio-card--rpg"><span>Miniatura RPG</span><small>Pintura e escala sob medida</small></article>
+            <article class="portfolio-card portfolio-card--figure"><span>Action figure</span><small>Personagem personalizado</small></article>
+            <article class="portfolio-card portfolio-card--decor"><span>Decoração geek</span><small>Setup e estante</small></article>
+            <article class="portfolio-card portfolio-card--gift"><span>Chaveiro / brinde</span><small>Lotes pequenos</small></article>
+            <article class="portfolio-card portfolio-card--tech"><span>Peça técnica</span><small>Suporte e protótipo</small></article>
+            <article class="portfolio-card portfolio-card--bust"><span>Busto 3D</span><small>A partir de foto</small></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="store-section" id="depoimentos" aria-label="Depoimentos">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <p class="section-subtitle">Peças entregues com acompanhamento por código e atendimento no WhatsApp.</p>
+          </header>
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">“A miniatura ficou perfeita para a mesa de RPG. Atendimento rápido e código do pedido facilitou o pagamento.”</p>
+              <p class="testimonial-author">— Rafael, miniatura de mesa</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">“Pedido personalizado de action figure. Recebi orçamento no mesmo dia e desconto no Pix como prometido.”</p>
+              <p class="testimonial-author">— Camila, action figure custom</p>
+            </article>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">“Suporte headset ficou firme e com acabamento limpo. Recomendo para quem quer peça única sem comprar em série.”</p>
+              <p class="testimonial-author">— Bruno, peça utilitária 3D</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="store-section store-section-cta" id="personalizados">
+        <div class="container catalog-cta-banner">
+          <div>
+            <h2 class="section-title">Peça personalizada</h2>
+            <p class="section-subtitle">
+              Busto a partir de foto, action figures, miniaturas e mais. Envie até 5 imagens de referência no formulário.
+            </p>
+          </div>
+          <a class="btn btn-buy" href="personalizado.html">Solicitar orçamento</a>
+        </div>
+      </section>
+
+      <section class="store-section store-section-alt" id="acompanhar">
+        <div class="container catalog-cta-banner">
+          <div>
+            <h2 class="section-title">Já fez um pedido?</h2>
+            <p class="section-subtitle">Consulte o status com o código MF3D recebido no WhatsApp.</p>
+          </div>
+          <a class="btn btn-outline" href="acompanhar.html">Acompanhar pedido</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-chrome-footer"></div>
+
+    <script src="./site-config.js?v=20260521c"></script>
+    <script src="./cart.js?v=20260521c"></script>
+    <script src="./customer-orders.js?v=20260521c"></script>
+    <script src="./store-common.js?v=20260521c"></script>
+    <script src="./customer-auth.js?v=20260521c"></script>
+    <script src="./site-layout.js?v=20260521c"></script>
+    <script src="./script.js?v=20260521c"></script>
+  </body>
+</html>

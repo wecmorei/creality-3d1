@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Carrinho de compras MiniForge 3D — finalize seu pedido com vários itens." />
+    <meta name="theme-color" content="#e85d04" />
+    <title>Carrinho | MiniForge 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260521c" />
+  </head>
+  <body class="cart-page" data-page="cart">
+    <div id="site-chrome-header"></div>
+
+    <main class="cart-main">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Navegação">
+          <a href="index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <a href="catalogo.html">Catálogo</a>
+          <span aria-hidden="true">/</span>
+          <span>Carrinho</span>
+        </nav>
+
+        <header class="cart-page-header">
+          <h1>Seu carrinho</h1>
+          <p id="cart-summary">Carregando...</p>
+        </header>
+
+        <div class="price-legend panel-card" role="note" aria-label="Tipos de preço">
+          <p><span class="product-price-badge product-price-badge--direct">Compra direta</span> Itens com preço base podem seguir para Mercado Pago quando todos tiverem valor definido.</p>
+          <p><span class="product-price-badge product-price-badge--quote">Sob orçamento</span> Valor final confirmado no WhatsApp antes da produção.</p>
+        </div>
+
+        <div class="cart-layout">
+          <section class="cart-items-panel" id="cart-items-panel" aria-live="polite"></section>
+
+          <aside class="cart-checkout-panel">
+            <div class="panel-card cart-totals" id="cart-totals"></div>
+
+            <form class="panel-card" id="cart-checkout-form">
+              <h2>Finalizar pedido</h2>
+              <p class="section-subtitle">Registramos todos os itens e você escolhe como pagar.</p>
+              <label>
+                Nome
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                WhatsApp
+                <input type="tel" name="phone" autocomplete="tel" required />
+              </label>
+              <label>
+                E-mail <span class="optional">(opcional)</span>
+                <input type="email" name="email" autocomplete="email" />
+              </label>
+              <label class="consent-label">
+                <input type="checkbox" name="consent" required />
+                Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a> e os <a href="termos.html" target="_blank" rel="noopener">termos de venda</a>.
+              </label>
+              <button class="btn btn-buy" type="submit" id="cart-submit-btn">Registrar pedido</button>
+              <button class="btn btn-outline" type="button" id="cart-mp-btn" hidden>Pagar com Mercado Pago</button>
+              <p class="form-hint" id="cart-mp-hint" hidden>
+                Pagamento online disponível quando todos os itens têm preço base definido.
+              </p>
+              <p class="form-status" id="cart-checkout-status" role="status"></p>
+            </form>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-chrome-footer"></div>
+
+    <script src="./site-config.js?v=20260521c"></script>
+    <script src="./cart.js?v=20260521c"></script>
+    <script src="./customer-orders.js?v=20260521c"></script>
+    <script src="./store-common.js?v=20260521c"></script>
+    <script src="./customer-auth.js?v=20260521c"></script>
+    <script src="./site-layout.js?v=20260521c"></script>
+    <script src="./carrinho.js?v=20260521c"></script>
+  </body>
+</html>

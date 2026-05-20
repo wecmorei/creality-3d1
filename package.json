@@ -1,0 +1,16 @@
+{
+  "name": "miniforge-3d",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check site-config.js && node --check cart.js && node --check customer-orders.js && node --check customer-auth.js && node --check store-common.js && node --check site-layout.js && node --check script.js && node --check catalogo.js && node --check produto.js && node --check carrinho.js && node --check minha-conta.js && node --check acompanhar.js && node --check personalizado.js && node --check admin.js",
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "seed:catalog": "node scripts/seed-catalog-10.mjs",
+    "test": "node --test tests/static.test.mjs tests/api.integration.test.mjs tests/catalog-quality.test.mjs",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

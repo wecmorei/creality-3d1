@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo MiniForge 3D — action figures, miniaturas, decoração geek e peças personalizadas em impressão 3D."
+    />
+    <meta name="theme-color" content="#e85d04" />
+    <title>Catálogo | MiniForge 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260521c" />
+  </head>
+  <body class="catalog-page" data-page="catalog">
+    <div id="site-chrome-header"></div>
+
+    <main class="catalog-main">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Navegação">
+          <a href="index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <span>Catálogo</span>
+        </nav>
+
+        <header class="catalog-page-header">
+          <div>
+            <h1>Catálogo</h1>
+            <p id="catalog-summary">Carregando produtos...</p>
+          </div>
+        </header>
+
+        <div class="price-legend panel-card" role="note" aria-label="Tipos de preço no catálogo">
+          <p><span class="product-price-badge product-price-badge--direct">Compra direta</span> Adicione ao carrinho e finalize online ou pelo WhatsApp.</p>
+          <p><span class="product-price-badge product-price-badge--quote">Sob orçamento</span> Valor e prazo confirmados antes da produção.</p>
+        </div>
+
+        <!-- Filtros mobile (chips horizontais) -->
+        <div class="catalog-mobile-filters" id="mobile-category-filters" aria-label="Filtrar por categoria"></div>
+
+        <div class="catalog-layout">
+          <aside class="catalog-sidebar" aria-label="Filtros">
+            <div class="filter-panel">
+              <h2>Categorias</h2>
+              <ul class="filter-list" id="category-filter-list"></ul>
+            </div>
+
+            <div class="filter-panel">
+              <h2>Faixa de preço</h2>
+              <label class="filter-select-label" for="price-filter">Preço base</label>
+              <select id="price-filter" class="filter-select">
+                <option value="">Todas</option>
+                <option value="ate-50">Até R$ 50</option>
+                <option value="50-100">R$ 50 a R$ 100</option>
+                <option value="acima-100">Acima de R$ 100</option>
+                <option value="sob-consulta">Sob consulta</option>
+              </select>
+            </div>
+            <div class="filter-panel">
+              <h2>Ordenar</h2>
+              <label class="filter-select-label" for="sort-select">Exibir por</label>
+              <select id="sort-select" class="filter-select">
+                <option value="destaques">Destaques primeiro</option>
+                <option value="nome">Nome (A–Z)</option>
+                <option value="preco-asc">Menor preço</option>
+                <option value="preco-desc">Maior preço</option>
+              </select>
+            </div>
+
+            <div class="filter-panel filter-panel-highlight">
+              <h2>Encomenda sob medida</h2>
+              <p>Não achou o que procura? Peça uma peça exclusiva.</p>
+              <a class="btn btn-outline btn-block" href="personalizado.html">Solicitar orçamento</a>
+            </div>
+          </aside>
+
+          <section class="catalog-content" aria-label="Lista de produtos">
+            <div class="catalog-toolbar">
+              <div class="active-filters" id="active-filters" aria-live="polite"></div>
+              <button type="button" class="btn-text" id="clear-filters" hidden>Limpar filtros</button>
+            </div>
+
+            <div class="product-grid" id="catalog-product-grid" aria-live="polite">
+              <p class="loading-message">Carregando catálogo...</p>
+            </div>
+
+            <p class="catalog-empty" id="catalog-empty" hidden>Nenhum produto encontrado com os filtros selecionados.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-chrome-footer"></div>
+
+    <script src="./site-config.js?v=20260521c"></script>
+    <script src="./cart.js?v=20260521c"></script>
+    <script src="./customer-orders.js?v=20260521c"></script>
+    <script src="./store-common.js?v=20260521c"></script>
+    <script src="./site-layout.js?v=20260521c"></script>
+    <script src="./catalogo.js?v=20260521c"></script>
+  </body>
+</html>

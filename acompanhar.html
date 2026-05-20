@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Acompanhe seu pedido MiniForge 3D pelo código MF3D." />
+    <meta name="theme-color" content="#e85d04" />
+    <title>Acompanhar pedido | MiniForge 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260521c" />
+  </head>
+  <body class="track-page" data-page="track">
+    <div id="site-chrome-header"></div>
+
+    <main class="track-main">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Navegação">
+          <a href="index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <span>Acompanhar pedido</span>
+        </nav>
+
+        <header class="track-header">
+          <h1>Acompanhar pedido</h1>
+          <p class="section-subtitle">
+            Digite o código MF3D enviado após o pedido. Você também pode ver pedidos salvos em
+            <a href="minha-conta.html">Minha conta</a>.
+          </p>
+        </header>
+
+        <form class="panel-card track-form" id="tracking-form">
+          <label>
+            Código do pedido
+            <input type="text" name="code" placeholder="MF3D-20260518-XXXXXXXX" required autocomplete="off" />
+          </label>
+          <button class="btn btn-buy" type="submit">Consultar status</button>
+          <div class="tracking-result" id="tracking-result" role="status"></div>
+        </form>
+      </div>
+    </main>
+
+    <div id="site-chrome-footer"></div>
+
+    <script src="./site-config.js?v=20260521c"></script>
+    <script src="./cart.js?v=20260521c"></script>
+    <script src="./customer-orders.js?v=20260521c"></script>
+    <script src="./store-common.js?v=20260521c"></script>
+    <script src="./customer-auth.js?v=20260521c"></script>
+    <script src="./site-layout.js?v=20260521c"></script>
+    <script src="./acompanhar.js?v=20260521c"></script>
+  </body>
+</html>

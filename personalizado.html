@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Peça personalizada em impressão 3D — busto a partir de foto, action figures, miniaturas e protótipos. Envie referências e receba orçamento."
+    />
+    <meta name="theme-color" content="#e85d04" />
+    <title>Personalizado | MiniForge 3D</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260521c" />
+  </head>
+  <body class="custom-page" data-page="custom">
+    <div id="site-chrome-header"></div>
+
+    <main class="custom-main">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Navegação">
+          <a href="index.html">Início</a>
+          <span aria-hidden="true">/</span>
+          <span>Personalizado</span>
+        </nav>
+
+        <header class="custom-page-header">
+          <h1>Peça personalizada em 3D</h1>
+          <p class="section-subtitle">
+            Descreva sua ideia e envie fotos de referência — ideal para bustos a partir de foto, action figures,
+            miniaturas, decoração ou peças técnicas. Registramos o pedido e retornamos pelo WhatsApp com o código MF3D.
+          </p>
+          <p class="pix-callout">
+            10% de desconto no Pix após confirmação do valor —
+            <a href="como-funciona.html#pagamento">saiba como funciona</a>.
+          </p>
+        </header>
+
+        <div class="custom-layout">
+          <aside class="custom-aside panel-card">
+            <h2 class="custom-aside-title">Como funciona</h2>
+            <ol class="custom-steps">
+              <li>Preencha o formulário e anexe até <strong>5 fotos</strong> (JPG, PNG ou WebP, máx. 8 MB cada).</li>
+              <li>Receba o código do pedido e abra o WhatsApp para alinhar detalhes.</li>
+              <li>Após o orçamento, acompanhe produção e pagamento pelo site.</li>
+            </ol>
+            <p class="custom-aside-note">
+              Quer algo do catálogo pronto? <a href="catalogo.html">Ver catálogo</a>
+            </p>
+          </aside>
+
+          <form class="panel-card custom-form" id="quote-form">
+            <h2>Solicitar orçamento</h2>
+
+            <label>
+              Nome
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              WhatsApp
+              <input type="tel" name="phone" autocomplete="tel" required />
+            </label>
+            <label>
+              E-mail <span class="optional">(opcional)</span>
+              <input type="email" name="email" autocomplete="email" />
+            </label>
+            <label>
+              Tipo de peça
+              <select name="category" required>
+                <option value="">Selecione</option>
+                <option>Busto 3D a partir de foto</option>
+                <option>Action figure</option>
+                <option>Miniatura</option>
+                <option>Decoração geek</option>
+                <option>Protótipo ou peça técnica</option>
+              </select>
+            </label>
+            <label>
+              Tamanho aproximado
+              <select name="size" required>
+                <option value="">Selecione</option>
+                <option>Pequeno, até 8 cm</option>
+                <option>Médio, de 9 a 18 cm</option>
+                <option>Grande, acima de 18 cm</option>
+                <option>Ainda não sei</option>
+              </select>
+            </label>
+            <label>
+              Descrição do pedido
+              <textarea
+                name="description"
+                rows="4"
+                required
+                placeholder="Ex.: busto 15 cm a partir da foto em anexo, acabamento primer para pintura..."
+              ></textarea>
+            </label>
+
+            <div class="custom-upload-block">
+              <label class="custom-upload-label" for="quote-references">
+                Fotos de referência <span class="optional">(opcional, até 5)</span>
+              </label>
+              <p class="form-hint">Envie ângulos claros do rosto, objeto ou peça que deseja reproduzir.</p>
+              <input
+                type="file"
+                id="quote-references"
+                name="references"
+                accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
+                multiple
+              />
+              <ul class="reference-preview-list" id="reference-preview-list" aria-live="polite"></ul>
+              <div class="upload-progress" id="quote-upload-progress" hidden>
+                <div class="upload-progress-bar" id="quote-upload-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                <p class="upload-progress-label" id="quote-upload-progress-label"></p>
+              </div>
+            </div>
+
+            <label class="consent-label">
+              <input type="checkbox" name="consent" required />
+              Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">política de privacidade</a> e os <a href="termos.html" target="_blank" rel="noopener">termos de venda</a>
+              (inclui envio de imagens para orçamento).
+            </label>
+            <input class="honeypot" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <button class="btn btn-buy" type="submit">Solicitar orçamento</button>
+            <p class="form-status" id="quote-form-status" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-chrome-footer"></div>
+
+    <script src="./site-config.js?v=20260521c"></script>
+    <script src="./cart.js?v=20260521c"></script>
+    <script src="./customer-orders.js?v=20260521c"></script>
+    <script src="./store-common.js?v=20260521c"></script>
+    <script src="./customer-auth.js?v=20260521c"></script>
+    <script src="./site-layout.js?v=20260521c"></script>
+    <script src="./personalizado.js?v=20260521c"></script>
+  </body>
+</html>
